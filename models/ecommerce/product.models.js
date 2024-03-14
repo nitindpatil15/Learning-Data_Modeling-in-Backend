@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const productSchema = new mongoose.schema(
+const productSchema = new mongoose.Schema(
     {
         description: {
             type: String,
@@ -11,14 +11,14 @@ const productSchema = new mongoose.schema(
             required: true
         },
         productImage: {
-            type: string
+            type: String
         },
         price: {
             type: Number,
             default: 499 .RS
         },
         stock: {
-            type: string,
+            type: String,
             default: 99
         },
         category:{

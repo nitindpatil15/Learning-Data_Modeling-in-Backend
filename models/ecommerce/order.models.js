@@ -10,6 +10,30 @@ const OrderIteamSchema = new mongoose.Schema({
     }
 })
 
+const AddressSchema = new mongoose.Schema(
+    {
+        flat_no:{
+            type : String,  
+        },
+        Landmark:{
+            type : String,
+        },
+        district:{
+            type : String,
+        },
+        pin_code:{
+            type : Number
+        },
+        state:{
+            type : String,
+        },
+        country:{
+            type : String,
+        }
+
+    }
+)
+
 const OrderSchema = new mongoose.Schema({
     orderPrice:{
         type : Number,
@@ -20,7 +44,10 @@ const OrderSchema = new mongoose.Schema({
         ref : 'USER'
     },
     orderIteams:{
-        type : {OrderIteamSchema}
+        type : [OrderIteamSchema]
+    },
+    Address : {
+        type: [AddressSchema]
     }
 }
 ,{timestamps : true})
